@@ -1,0 +1,28 @@
+#keyword-wrap{
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 300px;
+}
+.keyword-item{
+	padding: 0 15px;
+}
+.keyword-item input[type=checkbox]{
+	display: none;
+}
+.keyword-item input[type=checkbox] + span { 
+	&:before { content: "\e157"; }
+}
+.keyword-item input[type=checkbox]:checked + span { 
+	&:before { content: "\e067"; }
+}
+
+.left-wing{
+	position: relative;
+}
+.move-buttons{
+	width: 80px;
+
+	position: absolute;
+	top: 120px;
+	left: 100%;
+}
