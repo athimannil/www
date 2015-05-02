@@ -1,33 +1,41 @@
 $(document).ready(function() {
 
-
 	loadData();
 
 	function loadData () {
-			$.get('./data.json', function(data) {
-				
 
-			});						
+		$.getJSON('./data.json', function(data) {
+		
+			renderCatgories(data);// Render categories with data.json				
+		
+		});						
 
-			function renderCatgories(data){
-				
-				 var div 		= $('<div/>',{class:'keyword-item'});
-				 var u 	 		= $('<u/>',{class:'pull-right'});
-				 var button 	= $('<button/>',{class:'btn btn-defualt btn-xs'})
-				 var span 		= $('<span/>',{class:'glyphicon glyphicon-chevron-left'})
+		function renderCatgories(data){
 
-				 var clnBtn 	= button.clone();
-				 var clnDiv		= div.clone();
+			var div 		= $('<div/>',{class:'keyword-item'});
+			var u 	 		= $('<u/>',{class:'pull-right'});
+			var button 	= $('<button/>',{class:'btn btn-defualt btn-xs'})
+			var span 		= $('<span/>',{class:'glyphicon glyphicon-chevron-left'})
+		 
 
-				 span.clone().appendTo(clnBtn);
- 				 span.clone().appendTo(clnBtn);
+			var cats = data.categories;
 
- 				 u.clone().appendTo(div);
- 				 clnBtn.appendTo(div);
+			for (var i = 0; i < cats.length; i++) {				 
+			
+				var clnBtn 	= button.clone();
+				var clnDiv		= div.clone();
 
+				clnDiv.data('id', cats[i].id)
+				clnDiv.text(cats[i].name)
+				span.clone().appendTo(clnBtn);
+ 				span.clone().appendTo(clnBtn);
 
+ 				u.clone().appendTo(clnDiv);
+ 				clnBtn.appendTo(clnDiv);
 
-			}
+ 				clnDiv.appendTo('#keyword-wrap');
+
+			};	
+		}
 	}
-
 });
