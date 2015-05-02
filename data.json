@@ -1,0 +1,14 @@
+{
+    "categories": [
+        {
+            "id":"1",
+            "name": "home",
+            "checked": "true"
+        },
+        {
+            "id":"2",
+            "name": "office",
+            "checked": "true"
+        }
+    ]
+}
