@@ -26,14 +26,16 @@ $(document).ready(function() {
 				var clnDiv		= div.clone();
 
 				clnDiv.data('id', cats[i].id)
-				clnDiv.text(cats[i].name)
+				
 				span.clone().appendTo(clnBtn);
  				span.clone().appendTo(clnBtn);
 
  				u.clone().appendTo(clnDiv);
  				clnBtn.appendTo(clnDiv);
+ 				
+ 				clnDiv.text(cats[i].name)
 
- 				clnDiv.appendTo('#keyword-wrap');
+ 				clnDiv.appendTo('#keyword-sel');
 
 			};	
 		}
