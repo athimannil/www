@@ -3342,9 +3342,9 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-xs,
 .btn-group-xs > .btn {
-  padding: 1px 5px;
+  padding: 1px 3px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1;
   border-radius: 3px;
 }
 .btn-block {
@@ -5688,6 +5688,10 @@ button.close {
   overflow-x: hidden;
   max-height: 300px;
 }
+.keyword {
+  font-size: 12px;
+  padding-left: 8px;
+}
 .keyword-item {
   padding: 0 15px;
 }
@@ -5701,18 +5705,20 @@ button.close {
   content: "\e067";
 }
 .glyphicon-left-arrows {
-  width: 16px;
+  width: 14px;
   height: 12px;
   font-size: 10px;
 }
 .glyphicon-left-arrows:before {
   content: "\e079";
   position: absolute;
+  top: 1px;
   left: 0;
 }
 .glyphicon-left-arrows:after {
   content: "\e079";
   position: absolute;
+  top: 1px;
   left: 6px;
 }
 .left-wing {
