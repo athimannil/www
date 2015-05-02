@@ -5,14 +5,19 @@
 
 .breadcrumb {
   padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
-  margin-bottom: @line-height-computed;
+  // margin-bottom: @line-height-computed;
+  margin-bottom: 0;
   list-style: none;
   background-color: @breadcrumb-bg;
-  border-radius: @border-radius-base;
+  // border-radius: @border-radius-base;
+  font-size: 12px;
 
   > li {
     display: inline-block;
-
+    a{
+      color: #c7c7c7;
+      text-decoration: underline;
+    }
     + li:before {
       content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
       padding: 0 5px;

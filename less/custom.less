@@ -1,29 +1,42 @@
+.sub-head{
+	background: #ebebeb;
+	border-top: 2px solid #fc8f00;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+}
 .keyword-wrap{
 	overflow-y: auto;
 	overflow-x: hidden;
 	max-height: 300px;
 }
 .keyword{
-	font-size: 12px;
 	padding-left: 8px;
 }
 .keyword-item{
-	padding: 0 15px;
-}
-.keyword-item input[type=checkbox]{
-	display: none;
-}
-.keyword-item input[type=checkbox] + span { 
-	&:before { content: "\e157"; }
-}
-.keyword-item input[type=checkbox]:checked + span { 
-	&:before { content: "\e067"; }
+	padding: 8px 15px;
+	font-size: 12px;
+	label{
+		font-weight: normal;
+		margin-bottom: 0;
+	}
+	input[type=checkbox]{
+		display: none;
+	}
+	input[type=checkbox] + span { 
+		&:before { content: "\e157"; }
+	}
+	input[type=checkbox]:checked + span { 
+		&:before { content: "\e067"; }
+	}
+	p{
+		margin-bottom: 0;
+	}
 }
 
 .glyphicon-left-arrows{
 	width: 14px;
 	height: 12px;
-	font-size: 10px;
+	color: #888;
 	&:before{
 		content: "\e079"; 
 		position: absolute;
@@ -37,6 +50,42 @@
 		left: 6px;
 	}
 }
+.glyphicon-top-arrows{
+	width: 13px;
+	height: 20px;
+	&:before{
+		content: "\e113";
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	&:after{
+		content: "\e113";
+		position: absolute;
+		left: 0;
+		top: 6px;
+	}
+}
+.glyphicon-bottom-arrows{
+	height: 20px;
+    width: 13px;
+	&:before {
+		content: "\e114";
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	&:after {
+		content: "\e114";
+		position: absolute;
+		left: 0;
+		top: 6px;
+	}
+}
+.btn-topdown-arrow{
+  font-size: 13px;
+  color: #666;
+}
 
 .left-wing{
 	position: relative;
@@ -48,8 +97,9 @@
 	top: 120px;
 	left: 100%;
 }
-.text-muted{
-	margin-left: 43px;
+.inactive{
+	color: #999;
+	margin-left: 20px;
 	u,
 	button{
 		display: none;

@@ -3342,8 +3342,14 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-xs,
 .btn-group-xs > .btn {
-  padding: 1px 3px;
+  padding: 1px 5px;
   font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.btn-arrow {
+  padding: 1px 2px;
+  font-size: 10px;
   line-height: 1;
   border-radius: 3px;
 }
@@ -4571,21 +4577,25 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 .breadcrumb {
   padding: 8px 15px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   list-style: none;
-  background-color: #f5f5f5;
-  border-radius: 4px;
+  background-color: #3d3d3d;
+  font-size: 12px;
 }
 .breadcrumb > li {
   display: inline-block;
 }
+.breadcrumb > li a {
+  color: #c7c7c7;
+  text-decoration: underline;
+}
 .breadcrumb > li + li:before {
   content: "/\00a0";
   padding: 0 5px;
-  color: #cccccc;
+  color: #c7c7c7;
 }
 .breadcrumb > .active {
-  color: #777777;
+  color: #c7c7c7;
 }
 .pagination {
   display: inline-block;
@@ -5110,7 +5120,7 @@ a.thumbnail.active {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #ffffff;
+  background-color: #f7f7f7;
   border: 1px solid #dddddd;
 }
 .list-group-item:first-child {
@@ -5280,7 +5290,8 @@ a.list-group-item-danger.active:focus {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
-  padding: 15px;
+  padding: 10px;
+  background-color: #f7f7f7;
 }
 .panel-heading {
   padding: 10px 15px;
@@ -5346,8 +5357,8 @@ a.list-group-item-danger.active:focus {
 .panel > .table caption,
 .panel > .table-responsive > .table caption,
 .panel > .panel-collapse > .table caption {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .panel > .table:first-child,
 .panel > .table-responsive:first-child > .table:first-child {
@@ -5683,17 +5694,27 @@ button.close {
   border: 0;
   -webkit-appearance: none;
 }
+.sub-head {
+  background: #ebebeb;
+  border-top: 2px solid #fc8f00;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
 .keyword-wrap {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 300px;
 }
 .keyword {
-  font-size: 12px;
   padding-left: 8px;
 }
 .keyword-item {
-  padding: 0 15px;
+  padding: 8px 15px;
+  font-size: 12px;
+}
+.keyword-item label {
+  font-weight: normal;
+  margin-bottom: 0;
 }
 .keyword-item input[type=checkbox] {
   display: none;
@@ -5704,10 +5725,13 @@ button.close {
 .keyword-item input[type=checkbox]:checked + span:before {
   content: "\e067";
 }
+.keyword-item p {
+  margin-bottom: 0;
+}
 .glyphicon-left-arrows {
   width: 14px;
   height: 12px;
-  font-size: 10px;
+  color: #888;
 }
 .glyphicon-left-arrows:before {
   content: "\e079";
@@ -5721,6 +5745,42 @@ button.close {
   top: 1px;
   left: 6px;
 }
+.glyphicon-top-arrows {
+  width: 13px;
+  height: 20px;
+}
+.glyphicon-top-arrows:before {
+  content: "\e113";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.glyphicon-top-arrows:after {
+  content: "\e113";
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+.glyphicon-bottom-arrows {
+  height: 20px;
+  width: 13px;
+}
+.glyphicon-bottom-arrows:before {
+  content: "\e114";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.glyphicon-bottom-arrows:after {
+  content: "\e114";
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+.btn-topdown-arrow {
+  font-size: 13px;
+  color: #666;
+}
 .left-wing {
   position: relative;
 }
@@ -5730,11 +5790,12 @@ button.close {
   top: 120px;
   left: 100%;
 }
-.text-muted {
-  margin-left: 43px;
+.inactive {
+  color: #999;
+  margin-left: 20px;
 }
-.text-muted u,
-.text-muted button {
+.inactive u,
+.inactive button {
   display: none;
 }
 .modal-open {

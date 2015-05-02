@@ -20,56 +20,56 @@
 	</head>
 	<body>
 <div class="container">
-
-		<h1>Elise <small>T2L Administrator</small></h1>
-		<div>
-			<ol class="breadcrumb">
-				<li>
-					<span class="glyphicon glyphicon-home"></span> 
-					<a href="#">Home</a></li>
-				<li><a href="#">Keyword manager</a></li>
-				<li class="active">Keyword</li>
-			</ol>
-		</div>
-		<h2>Keyword</h2>
-		<hr>
-		<h4>Main keyword: Kok</h4>
+  <div class="row" style="background: #3d3d3d;">
+    <div class="col-md-12">
+    <h1 style="color:#fc8f00;">elise <small>T2L Administrator</small></h1>
+    </div>
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li>
+          <span class="glyphicon glyphicon-home"></span> 
+          <a href="#">Home</a></li>
+        <li><a href="#">Keyword manager</a></li>
+        <li class="active">Keyword</li>
+      </ol>
+    </div>
+    <div class="col-md-12 sub-head">
+      <h3>Keyword</h3>
+    </div>
+  </div>
+  <h4>Main keyword: Kok</h4>
 <div class="row">
 	<div class="col-md-6 left-wing">
 		<div class="move-buttons">
 			<!-- Standard button -->
-			<button type="button" class="btn btn-default btn-xs">
-				<span class="glyphicon glyphicon-chevron-up"></span>
-				<br>
-				<span class="glyphicon glyphicon-chevron-up"></span>
-			</button>
-			<br><br>
+			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+        <span class="glyphicon glyphicon-top-arrows"></span>
+      </button>
+			<br>
 			<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-			<button type="button" class="btn btn-default btn-xs">
+			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
 				<span class="glyphicon glyphicon-chevron-up"></span>
 			</button>
-			<br><br>
+			<br>
 			<!-- Contextual button for informational alert messages -->
-			<button type="button" class="btn btn-default btn-xs">
+			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
 				<span class="glyphicon glyphicon-chevron-down"></span>
 			</button>
-			<br><br>
+			<br>
 			<!-- Indicates a successful or positive action -->
-			<button type="button" class="btn btn-default btn-xs">
-				<span class="glyphicon glyphicon-chevron-down"></span>
-				<br>
-				<span class="glyphicon glyphicon-chevron-down"></span>
-			</button>
+			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+        <span class="glyphicon glyphicon-bottom-arrows"></span>
+      </button>
 		</div>
 		<div class="panel panel-default">
-			<div class="panel-heading">
+			<div class="panel-heading" style="background:#707070;color:#fff;">
 				<div class="text-uppercase">Related categories, manual</div>
 			</div>
-			<div class="panel-body">
+			<div class="panel-body" style="background:#f7f7f7;">
 				Select/deselect related categories and order them by using the arrows
 			</div>
 			<div class="list-group">
-				<div class="list-group-item keyword-item">
+				<div class="list-group-item keyword-item" style="background:#f7f7f7;padding-top:10px;">
 					<u class="pull-right">Keywords</u>
 					<label>
 						<input type="checkbox">
@@ -83,7 +83,7 @@
 					<label>
 						<input type="checkbox">
 						<span class="glyphicon"></span>
-						Lorem ipsum</label>
+						Chef-kok</label>
 				</div>
 				<div class="keyword-item">
 					<u class="pull-right">Keywords</u>
@@ -214,21 +214,38 @@
 			</div>
 			<div class="list-group">
 				<div class="list-group-item keyword-item" data-id=''>
-					<button type="button" class="btn btn-default btn-xs">
-						<span class="glyphicon glyphicon-chevron-left"></span>
-						<span class="glyphicon glyphicon-chevron-left"></span>
-					</button>
-					Restore to generated categories
+          <u class="pull-right">Keywords</u>
+          <p>
+            <button class="btn btn-default btn-xss btn-arrow pull-left">
+              <span class="glyphicon glyphicon-left-arrows"></span>
+            </button>
+            <span class="keyword">Restore to generated categories</span>
+          </p>
 				</div>
 			</div>
 			<div id="keyword-sel">
+        <div class="keyword-item">
+          <u class="pull-right">Keywords</u>
+          <p>
+            <button class="btn btn-default btn-xss btn-arrow pull-left">
+              <span class="glyphicon glyphicon-left-arrows"></span>
+            </button>
+            <span class="keyword">Keyword item</span>
+          </p>
+        </div>
+        <div class="keyword-item">
+          <u class="pull-right">Keywords</u>
+          <p>
+            <button class="btn btn-default btn-arrow pull-left">
+              <span class="glyphicon glyphicon-left-arrows"></span>
+            </button>
+            <span class="keyword">Keyword item</span>
+          </p>
+        </div>
 				<div class="keyword-item">
           <u class="pull-right">Keywords</u>
           <p>
-            <button class="btn btn-default btn-xs pull-left">
-            <!-- <button class="btn btn-default btn-xs" style="width:18px;height:14px;"> -->
-              <!-- <span class="glyphicon glyphicon-chevron-left"></span> -->
-              <!-- <span class="glyphicon glyphicon-chevron-left"></span> -->
+            <button class="btn btn-default btn-xss btn-arrow pull-left">
               <span class="glyphicon glyphicon-left-arrows"></span>
             </button>
             <span class="keyword">Keyword item</span>
@@ -241,14 +258,15 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="form-group pull-right">
-			<button type="button" class="btn btn-primary">Save</button>
+			<button type="button" class="btn btn-primary" style="background:#fc8f00;border-color:#fc8f00;">Save</button>
 			<button type="button" class="btn btn-default">Cancel</button>
 		</div>     
 	</div>
 </div>
 		
-<footer>
-	<p>WCC</p>
+<footer style="border-top:2px solid #fc8f00; padding-top:8px;">
+  <img src="img/logo.svg" alt="" style="height:32px; width:92px;position:absolute;">
+	<p class="text-center">disclaimer | support</p>
 </footer>
 </div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
