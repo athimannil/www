@@ -5700,7 +5700,7 @@ button.close {
 .keyword-item input[type=checkbox]:checked + span:before {
   content: "\e067";
 }
-.right-wing {
+.left-wing {
   position: relative;
 }
 .move-buttons {
@@ -5708,6 +5708,13 @@ button.close {
   position: absolute;
   top: 120px;
   left: 100%;
+}
+.text-muted {
+  margin-left: 43px;
+}
+.text-muted u,
+.text-muted button {
+  display: none;
 }
 .modal-open {
   overflow: hidden;
