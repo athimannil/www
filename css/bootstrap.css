@@ -5683,7 +5683,7 @@ button.close {
   border: 0;
   -webkit-appearance: none;
 }
-#keyword-wrap {
+.keyword-wrap {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 300px;
@@ -5699,6 +5699,21 @@ button.close {
 }
 .keyword-item input[type=checkbox]:checked + span:before {
   content: "\e067";
+}
+.glyphicon-left-arrows {
+  width: 16px;
+  height: 12px;
+  font-size: 10px;
+}
+.glyphicon-left-arrows:before {
+  content: "\e079";
+  position: absolute;
+  left: 0;
+}
+.glyphicon-left-arrows:after {
+  content: "\e079";
+  position: absolute;
+  left: 6px;
 }
 .left-wing {
   position: relative;
