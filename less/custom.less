@@ -1,4 +1,4 @@
-#keyword-wrap{
+.keyword-wrap{
 	overflow-y: auto;
 	overflow-x: hidden;
 	max-height: 300px;
@@ -14,6 +14,22 @@
 }
 .keyword-item input[type=checkbox]:checked + span { 
 	&:before { content: "\e067"; }
+}
+
+.glyphicon-left-arrows{
+	width: 16px;
+	height: 12px;
+	font-size: 10px;
+	&:before{
+		content: "\e079"; 
+		position: absolute;
+		left: 0;
+	}
+	&:after{
+		content: "\e079";
+		position: absolute;
+		left: 6px;
+	}
 }
 
 .left-wing{
