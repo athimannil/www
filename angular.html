@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Bootstrap 101 Template</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+<div class="container" ng-app="keywordApp">
+  <div class="row" style="background: #3d3d3d;">
+	<div class="col-md-12">
+	<h1 style="color:#fc8f00;">elise <small>T2L Administrator</small></h1>
+	</div>
+	<div class="col-md-12">
+	  <ol class="breadcrumb">
+		<li>
+		  <span class="glyphicon glyphicon-home"></span> 
+		  <a href="#">Home</a></li>
+		<li><a href="#">Keyword manager</a></li>
+		<li class="active">Keyword</li>
+	  </ol>
+	</div>
+	<div class="col-md-12 sub-head">
+	  <h3>Keyword</h3>
+	</div>
+  </div>
+  <h4>Main keyword: Kok</h4>
+<div class="row" ng-controller="keywordController">
+	<div class="col-md-6 left-wing">
+		<div class="move-buttons">
+			<!-- Standard button -->
+			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+		<span class="glyphicon glyphicon-top-arrows"></span>
+	  </button>
+			<br>
+			<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+				<span class="glyphicon glyphicon-chevron-up"></span>
+			</button>
+			<br>
+			<!-- Contextual button for informational alert messages -->
+			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+				<span class="glyphicon glyphicon-chevron-down"></span>
+			</button>
+			<br>
+			<!-- Indicates a successful or positive action -->
+			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+		<span class="glyphicon glyphicon-bottom-arrows"></span>
+	  </button>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading" style="background:#707070;color:#fff;">
+				<div class="text-uppercase">Related categories, manual</div>
+			</div>
+			<div class="panel-body" style="background:#f7f7f7;">
+				Select/deselect related categories and order them by using the arrows
+			</div>
+			<div class="list-group">
+        <div class="list-group-item keyword-item" style="background:#f7f7f7;padding-top:10px;">
+          <u class="pull-right">Keywords</u>
+          <label>
+            <input type="checkbox">
+            <span class="glyphicon"></span>
+            Lorem ipsum</label>
+        </div>
+
+				<div class="list-group-item keyword-item" ng-repeat="select in selected" style="background:#f7f7f7;padding-top:10px;">
+					<u class="pull-right">Keywords</u>
+					<label>
+						<input type="checkbox">
+						<span class="glyphicon"></span>
+						{{select.name}}</label>
+				</div>
+
+			</div>
+			<div id="keyword-wrap">
+				
+				<div class="keyword-item">
+					<u class="pull-right">Keywords</u>
+					<label>
+						<input class="btn-select" type="checkbox">
+						<span class="glyphicon"></span>
+						Lorem ipsum</label>
+				</div>
+				
+			</div>
+			<div class="panel-footer">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search for another category">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div><!-- /input-group -->
+			</div>
+		</div>
+	</div>
+	<div class="col-md-5 col-md-offset-1">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<button type="button" class="btn btn-default btn-sm pull-right btn-hide">Hide</button>
+				<div class="text-uppercase">Related categories, manual</div>
+			</div>
+			<div class="panel-body">
+				Automaticaly generated values from the system
+			</div>
+			<div class="list-group">
+				<div class="list-group-item keyword-item" data-id=''>
+					<u class="pull-right">Keywords</u>
+					<p>
+						<button class="btn btn-default btn-xss btn-arrow pull-left">
+						  <span class="glyphicon glyphicon-left-arrows"></span>
+						</button>
+						<span class="keyword">Restore to generated categories</span>
+					</p>
+				</div>
+			</div>
+		<div id="keyword-sel">
+      <!-- <div class="keyword-item" ng-repeat="category in categories" ng-class='{"inactive": selectedmode != $index}'> -->
+      <div class="keyword-item" ng-repeat="category in categories" ng-class="{'inactive' : category.selected}">
+			  <u class="pull-right">Keywords</u>
+			  <p>
+  				<button class="btn btn-default btn-xss btn-arrow pull-left btn-left" ng-click="movetorelated(category, $index)">
+  				  <span class="glyphicon glyphicon-left-arrows"></span>
+  				</button>
+  				<span class="keyword">{{category.name}} {{$index}}</span>
+			  </p>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group pull-right">
+			<button type="button" class="btn btn-save btn-primary" style="background:#fc8f00;border-color:#fc8f00;">Save</button>
+			<button type="button" class="btn btn-default">Cancel</button>
+		</div>     
+	</div>
+</div>
+		
+<footer style="border-top:2px solid #fc8f00; padding-top:8px;">
+  <img src="img/logo.svg" alt="" style="height:32px; width:92px;position:absolute;">
+	<p class="text-center">disclaimer | support</p>
+</footer>
+</div>
+		<!-- <script src="js/jquery.min.js"></script> -->
+		<!-- <script src="js/bootstrap.min.js"></script> -->
+		<!-- <script src="js/script.js"></script>		 -->
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/anglarcore.js"></script>
+	</body>
+</html>
