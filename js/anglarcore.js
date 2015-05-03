@@ -19,16 +19,14 @@
 
 		$scope.movetorelated = function(section, $index) {
 		   $scope.selected.push(section);
-
-		   // $scope.selectedmode = $index;
-
 	        var e = $scope.categories[$index];
 	        e.selected = !e.selected;
-		   console.log(e.selected);
+	        e.ticked = true;
 		};
-		/*$scope.isSelected = function(section) {
-		    return $scope.selected === section;
-		};*/
+
+		$scope.categoryChange = function (argument) {
+			console.log(argument);
+		};
 	});
 
 })();

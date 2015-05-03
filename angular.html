@@ -76,24 +76,15 @@
             <span class="glyphicon"></span>
             Lorem ipsum</label>
         </div>
-
-				<div class="list-group-item keyword-item" ng-repeat="select in selected" style="background:#f7f7f7;padding-top:10px;">
-					<u class="pull-right">Keywords</u>
-					<label>
-						<input type="checkbox">
-						<span class="glyphicon"></span>
-						{{select.name}}</label>
-				</div>
-
 			</div>
 			<div id="keyword-wrap">
 				
-				<div class="keyword-item">
+				<div class="keyword-item" ng-repeat="select in selected">
 					<u class="pull-right">Keywords</u>
 					<label>
-						<input class="btn-select" type="checkbox">
+						<input class="btn-select" type="checkbox" ng-model="select.ticked" ng-change="categoryChange(select.ticked)">
 						<span class="glyphicon"></span>
-						Lorem ipsum</label>
+						{{select.name}}</label>
 				</div>
 				
 			</div>
@@ -130,7 +121,6 @@
 				</div>
 			</div>
 		<div id="keyword-sel">
-      <!-- <div class="keyword-item" ng-repeat="category in categories" ng-class='{"inactive": selectedmode != $index}'> -->
       <div class="keyword-item" ng-repeat="category in categories" ng-class="{'inactive' : category.selected}">
 			  <u class="pull-right">Keywords</u>
 			  <p>
