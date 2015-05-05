@@ -14,10 +14,12 @@
 		$scope.selected 	= [];
 		$scope.selectedmode = null;
 
+
 		//Check if old save data exists 
-		if(!localStorage.getItem('saveSession')){
+		if(localStorage.getItem('saveSession')){
 			var saveSession		= angular.fromJson(localStorage.getItem('saveSession'));
 			$scope.categories	= saveSession.categories;
+			//Some more modification needed here to add to next column
 
 		}else{
 
