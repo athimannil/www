@@ -11,22 +11,37 @@
 	});*/
 
 	app.controller('keywordController', function($scope, $http) {
-		$scope.selected = [];
+		$scope.selected 	= [];
 		$scope.selectedmode = null;
-		$http.get('./data.json').then(function(res){
-			$scope.categories = res.data.categories;                
-        });
+
+		//Check if old save data exists 
+		if(!localStorage.getItem('saveSession')){
+			var saveSession		= angular.fromJson(localStorage.getItem('saveSession'));
+			$scope.categories	= saveSession.categories;
+
+		}else{
+
+			$http.get('./data.json').then(function(res){
+				$scope.categories = res.data.categories;
+			});	
+		}
 
 		$scope.movetorelated = function(section, $index) {
-		   $scope.selected.push(section);
-	        var e = $scope.categories[$index];
-	        e.selected = !e.selected;
-	        e.ticked = true;
+			$scope.selected.push(section);
+			var e 		= $scope.categories[$index];
+			e.selected	= !e.selected;
+			e.ticked 	= false;
 		};
 
-		$scope.categoryChange = function (argument) {
-			console.log(argument);
+		$scope.categoryChange = function (argument,$index) {
+			$scope.categories[$index].ticked = argument;			
+		};
+
+		$scope.saveSelection = function(){			
+			var saveSession			= new Object();
+			saveSession.categories	= $scope.categories;
+
+			localStorage.setItem('saveSession', angular.toJson(saveSession));
 		};
 	});
-
 })();

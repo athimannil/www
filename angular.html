@@ -69,20 +69,20 @@
 				Select/deselect related categories and order them by using the arrows
 			</div>
 			<div class="list-group">
-        <div class="list-group-item keyword-item" style="background:#f7f7f7;padding-top:10px;">
-          <u class="pull-right">Keywords</u>
-          <label>
-            <input type="checkbox">
-            <span class="glyphicon"></span>
-            Lorem ipsum</label>
-        </div>
+		<div class="list-group-item keyword-item" style="background:#f7f7f7;padding-top:10px;">
+		  <u class="pull-right">Keywords</u>
+		  <label>
+			<input type="checkbox">
+			<span class="glyphicon"></span>
+			Lorem ipsum</label>
+		</div>
 			</div>
 			<div id="keyword-wrap">
 				
 				<div class="keyword-item" ng-repeat="select in selected">
 					<u class="pull-right">Keywords</u>
 					<label>
-						<input class="btn-select" type="checkbox" ng-model="select.ticked" ng-change="categoryChange(select.ticked)">
+						<input class="btn-select" type="checkbox" ng-model="select.ticked" ng-change="categoryChange(select.ticked,$index)">
 						<span class="glyphicon"></span>
 						{{select.name}}</label>
 				</div>
@@ -121,27 +121,30 @@
 				</div>
 			</div>
 		<div id="keyword-sel">
-      <div class="keyword-item" ng-repeat="category in categories" ng-class="{'inactive' : category.selected}">
+	  <div class="keyword-item" ng-repeat="category in categories" ng-class="{'inactive' : category.selected}">
 			  <u class="pull-right">Keywords</u>
 			  <p>
-  				<button class="btn btn-default btn-xss btn-arrow pull-left btn-left" ng-click="movetorelated(category, $index)">
-  				  <span class="glyphicon glyphicon-left-arrows"></span>
-  				</button>
-  				<span class="keyword">{{category.name}} {{$index}}</span>
+				<button class="btn btn-default btn-xss btn-arrow pull-left btn-left" ng-click="movetorelated(category, $index)">
+				  <span class="glyphicon glyphicon-left-arrows"></span>
+				</button>
+				<span class="keyword">{{category.name}} {{$index}}</span>
 			  </p>
 			</div>
 		</div>
 		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="col-md-6">
-		<div class="form-group pull-right">
-			<button type="button" class="btn btn-save btn-primary" style="background:#fc8f00;border-color:#fc8f00;">Save</button>
-			<button type="button" class="btn btn-default">Cancel</button>
-		</div>     
+	<!-- moved to here -->
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group pull-right">
+				<button type="button" ng-click="saveSelection()" class="btn btn-save btn-primary" style="background:#fc8f00;border-color:#fc8f00;">Save</button>
+				<button type="button" class="btn btn-default">Cancel</button>
+			</div>
+		</div>
 	</div>
+
 </div>
+<!-- moved from this  -->
 		
 <footer style="border-top:2px solid #fc8f00; padding-top:8px;">
   <img src="img/logo.svg" alt="" style="height:32px; width:92px;position:absolute;">
@@ -152,7 +155,7 @@
 		<!-- <script src="js/bootstrap.min.js"></script> -->
 		<!-- <script src="js/script.js"></script>		 -->
 
-    <script src="js/angular.min.js"></script>
-    <script src="js/anglarcore.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/anglarcore.js"></script>
 	</body>
 </html>
