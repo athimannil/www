@@ -54,14 +54,14 @@
 		};
 
 		$scope.moveFirst = function(){
-			console.log('To first');
+			// console.log('To first');
 
 			for (var i = 0; i < $scope.highlighted.length; i++) {
 				if(typeof $scope.highlighted[i] !== 'undefined' && $scope.highlighted[i]!== 0){
 					
 					//Move upto 0
 					for(var j = $scope.highlighted[i] ;j>0 ; j--){
-							// console.log('working');
+							console.log('working');
 						swapObject($scope.highlighted[j], $scope.highlighted[j]-1);
 						// remove old position of highlighted element
 						delete $scope.highlighted[j];
@@ -73,7 +73,7 @@
 		}
 
 		$scope.moveUp = function(){
-			console.log('up');
+			// console.log('up');
 
 			for (var i = 0; i < $scope.highlighted.length; i++) {
 				if(typeof $scope.highlighted[i] !== 'undefined' && $scope.highlighted[i] !== 0){
@@ -87,7 +87,7 @@
 		}
 
 		$scope.moveDown = function(){
-			console.log('down');		
+			// console.log('down');		
 
 			var total = $scope.highlighted.length;
 
@@ -105,28 +105,28 @@
 		}
 
 		$scope.moveLast = function(){
-			console.log('Last');
+		 // console.log('Last');
 
 			var total = $scope.highlighted.length;
+			var maxSel = $scope.selected.length;
 
 			for (var i = total; i > -1; i--) {
 			
-				if(typeof $scope.highlighted[i] !== 'undefined' && $scope.selected.length !== i){
-					//Move down upto last row
-					for(var j = $scope.highlighted[i]; j<= $scope.selected.length; j++){
+				if(typeof $scope.highlighted[i] !== 'undefined' && maxSel !== i){
+					
+					//Move down upto last row					
+					for(var j = $scope.highlighted[i]; j < maxSel-1; j++){
 						swapObject($scope.highlighted[j], $scope.highlighted[j]+1);
 						// remove old position of highlighted element
-						$scope.highlighted[j+1] = j+1;
 						delete $scope.highlighted[j];
-					}					
+						$scope.highlighted[j+1]= j+1;
+					}
 				}
 			};
 		}
 		
-
 		function swapObject(from,to){
-
-			console.log('From:' + from + ' To: ' + to);
+			// console.log('From:' + from + ' To: ' + to);
 			var temp 	= new Object;
 			
 			temp 					= $scope.selected[from];
