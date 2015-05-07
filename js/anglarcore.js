@@ -64,12 +64,27 @@
 		};
 
 		$scope.moveFirst = function(){
-			console.log('mangaTholi');
-			swapObject(0,1);
+			console.log('mangaTholi');			
+			//swapObject(0,1);
+
+			var indexes =  $scope.highlighted
+			for (var i = 0; i < indexes.length; i++) {
+				
+			};
 		}
 
 		$scope.moveUp = function(){
 			console.log('up');
+
+			for (var i = 0; i < $scope.highlighted.length; i++) {
+				if(typeof $scope.highlighted[i] !== 'undefined' && $scope.highlighted[i] !== 0){
+					swapObject($scope.highlighted[i], $scope.highlighted[i]-1);
+					
+					// remove old position highlighted element
+					delete $scope.highlighted[i];
+					$scope.highlighted[i-1] = i-1;
+				}
+			};
 		}
 
 		$scope.moveDown = function(){
@@ -81,6 +96,8 @@
 		}
 
 		function swapObject(from,to){
+
+			console.log('From' + from + ' To ' + to);
 			var temp 	= new Object;
 			
 			temp 					= $scope.selected[from];
