@@ -50,19 +50,26 @@
 			if(typeof $scope.highlighted[$index] === 'undefined')				
 				$scope.highlighted[$index] =  $index;
 			else
-				delete $scope.highlighted[$index];
-
-				// console.log($scope.highlighted + ' ' +$index);
+				delete $scope.highlighted[$index];			
 		};
 
 		$scope.moveFirst = function(){
-			console.log('mangaTholi');			
-			//swapObject(0,1);
+			console.log('To first');
 
-			var indexes =  $scope.highlighted
-			for (var i = 0; i < indexes.length; i++) {
-				
+			for (var i = 0; i < $scope.highlighted.length; i++) {
+				if(typeof $scope.highlighted[i] !== 'undefined' && $scope.highlighted[i]!== 0){
+					
+					//Move upto 0
+					for(var j = $scope.highlighted[i] ;j>0 ; j--){
+							// console.log('working');
+						swapObject($scope.highlighted[j], $scope.highlighted[j]-1);
+						// remove old position of highlighted element
+						delete $scope.highlighted[j];
+						$scope.highlighted[j-1] = j-1;
+					}				
+				}
 			};
+			
 		}
 
 		$scope.moveUp = function(){
@@ -72,7 +79,7 @@
 				if(typeof $scope.highlighted[i] !== 'undefined' && $scope.highlighted[i] !== 0){
 					swapObject($scope.highlighted[i], $scope.highlighted[i]-1);
 					
-					// remove old position highlighted element
+					// remove old position of highlighted element
 					delete $scope.highlighted[i];
 					$scope.highlighted[i-1] = i-1;
 				}
@@ -81,16 +88,15 @@
 
 		$scope.moveDown = function(){
 			console.log('down');		
-			
+
 			var total = $scope.highlighted.length;
 
 			for (var i = total; i > -1; i--) {
 			
 				if(typeof $scope.highlighted[i] !== 'undefined' && $scope.selected.length !== i)
 				{
-					swapObject($scope.highlighted[i], $scope.highlighted[i]+1);
-					
-					// remove old position highlighted element
+					swapObject($scope.highlighted[i], $scope.highlighted[i]+1);					
+					// remove old position of highlighted element
 					delete $scope.highlighted[i];
 					$scope.highlighted[i+1] = i+1;
 				}
@@ -100,7 +106,23 @@
 
 		$scope.moveLast = function(){
 			console.log('Last');
+
+			var total = $scope.highlighted.length;
+
+			for (var i = total; i > -1; i--) {
+			
+				if(typeof $scope.highlighted[i] !== 'undefined' && $scope.selected.length !== i){
+					//Move down upto last row
+					for(var j = $scope.highlighted[i]; j<= $scope.selected.length; j++){
+						swapObject($scope.highlighted[j], $scope.highlighted[j]+1);
+						// remove old position of highlighted element
+						$scope.highlighted[j+1] = j+1;
+						delete $scope.highlighted[j];
+					}					
+				}
+			};
 		}
+		
 
 		function swapObject(from,to){
 
