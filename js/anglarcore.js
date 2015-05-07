@@ -13,12 +13,19 @@
 	app.controller('keywordController', function($scope, $http) {
 		$scope.selected 	= [];
 		$scope.selectedmode = null;
+		$scope.hilighted	= [];
 
 
 		//Check if old save data exists 
 		if(localStorage.getItem('saveSession')){
 			var saveSession		= angular.fromJson(localStorage.getItem('saveSession'));
 			$scope.categories	= saveSession.categories;
+			
+			for (var i = 0; i < saveSession.categories.length; i++) {
+				if(saveSession.categories[i].selected === true){
+					$scope.selected.push(saveSession.categories[i]);
+				}
+			};
 			//Some more modification needed here to add to next column
 
 		}else{
@@ -44,6 +51,11 @@
 			saveSession.categories	= $scope.categories;
 
 			localStorage.setItem('saveSession', angular.toJson(saveSession));
+		};
+
+		$scope.highlight = function($parent, $index ){
+				$parrent.highlighted = $parrent.highlighted == $index ? null : $index;
+				console.log($parrent + ' ' +$index);
 		};
 	});
 })();
