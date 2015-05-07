@@ -13,7 +13,7 @@
 	app.controller('keywordController', function($scope, $http) {
 		$scope.selected 	= [];
 		$scope.selectedmode = null;
-		$scope.hilighted	= [];
+		$scope.highlighted	= [];
 
 
 		//Check if old save data exists 
@@ -53,9 +53,9 @@
 			localStorage.setItem('saveSession', angular.toJson(saveSession));
 		};
 
-		$scope.highlight = function($parent, $index ){
-				$parrent.highlighted = $parrent.highlighted == $index ? null : $index;
-				console.log($parrent + ' ' +$index);
+		$scope.highlight = function($index ){
+				$scope.highlighted[$index] =  $index;
+				console.log($scope.highlighted + ' ' +$index);
 		};
 	});
 })();

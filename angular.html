@@ -79,7 +79,7 @@
 			</div>
 			<div id="keyword-wrap">
 				
-				<div ng-class="{'active':highlighted==$index}" ng-click='highlight($parent,$index)' class="keyword-item" ng-repeat="select in selected">
+				<div ng-class="{'active':highlighted[$index]==$index}" ng-click='highlight($index)' class="keyword-item" ng-repeat="select in selected">
 					<u class="pull-right">Keywords</u>
 					<label>
 						<input class="btn-select" type="checkbox" ng-model="select.ticked" ng-change="categoryChange(select.ticked,$index)">
