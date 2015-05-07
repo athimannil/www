@@ -97,7 +97,7 @@
 
 		function swapObject(from,to){
 
-			console.log('From' + from + ' To ' + to);
+			console.log('From:' + from + ' To: ' + to);
 			var temp 	= new Object;
 			
 			temp 					= $scope.selected[from];
