@@ -25,7 +25,7 @@
 				if(saveSession.categories[i].selected === true){
 					$scope.selected.push(saveSession.categories[i]);
 				}
-			};
+			}
 			//Some more modification needed here to add to next column
 
 		}else{
