@@ -1,14 +1,6 @@
 (function(){
 	var app = angular.module('keywordApp', []);
-	/*app.controller('keywordController', function($scope){
-		$scope.related = [];
-		$scope.categories = [
-			{id: "1", name: "home" },
-			{id: "2", name: "office" },
-			{id: "3", name: "mangaTholi" },
-			{id: "4", name: "ThengaKola" }		
-		];	
-	});*/
+
 
 	app.controller('keywordController', function($scope, $http) {
 		$scope.selected 	= [];
@@ -88,7 +80,22 @@
 		}
 
 		$scope.moveDown = function(){
-			console.log('down');
+			console.log('down');		
+			
+			var total = $scope.highlighted.length;
+
+			for (var i = total; i > -1; i--) {
+			
+				if(typeof $scope.highlighted[i] !== 'undefined' && $scope.selected.length !== i)
+				{
+					swapObject($scope.highlighted[i], $scope.highlighted[i]+1);
+					
+					// remove old position highlighted element
+					delete $scope.highlighted[i];
+					$scope.highlighted[i+1] = i+1;
+				}
+			};
+			
 		}
 
 		$scope.moveLast = function(){
