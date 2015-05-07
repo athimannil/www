@@ -54,7 +54,12 @@
 		};
 
 		$scope.highlight = function($index ){
+
+			if(typeof $scope.highlighted[$index] === 'undefined')				
 				$scope.highlighted[$index] =  $index;
+			else
+				delete $scope.highlighted[$index];
+
 				console.log($scope.highlighted + ' ' +$index);
 		};
 	});
