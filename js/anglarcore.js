@@ -60,7 +60,32 @@
 			else
 				delete $scope.highlighted[$index];
 
-				console.log($scope.highlighted + ' ' +$index);
+				// console.log($scope.highlighted + ' ' +$index);
 		};
+
+		$scope.moveFirst = function(){
+			console.log('mangaTholi');
+			swapObject(0,1);
+		}
+
+		$scope.moveUp = function(){
+			console.log('up');
+		}
+
+		$scope.moveDown = function(){
+			console.log('down');
+		}
+
+		$scope.moveLast = function(){
+			console.log('Last');
+		}
+
+		function swapObject(from,to){
+			var temp 	= new Object;
+			
+			temp 					= $scope.selected[from];
+			$scope.selected[from] 	= $scope.selected[to];
+			$scope.selected[to] 	= temp;
+		}
 	});
 })();

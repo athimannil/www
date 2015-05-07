@@ -42,22 +42,22 @@
 	<div class="col-md-6 left-wing">
 		<div class="move-buttons">
 			<!-- Standard button -->
-			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
-		<span class="glyphicon glyphicon-top-arrows"></span>
-	  </button>
+			<button ng-click="moveFirst()" type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+				<span class="glyphicon glyphicon-top-arrows"></span>
+			</button>
 			<br>
 			<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+			<button ng-click="moveUp()" type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
 				<span class="glyphicon glyphicon-chevron-up"></span>
 			</button>
 			<br>
 			<!-- Contextual button for informational alert messages -->
-			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+			<button ng-click="moveDown()" type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
 				<span class="glyphicon glyphicon-chevron-down"></span>
 			</button>
 			<br>
 			<!-- Indicates a successful or positive action -->
-			<button type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
+			<button ng-click="moveLast()" type="button" class="btn btn-default btn-arrow btn-topdown-arrow">
 		<span class="glyphicon glyphicon-bottom-arrows"></span>
 	  </button>
 		</div>
@@ -78,8 +78,7 @@
 		</div>
 			</div>
 			<div class="keyword-wrap">
-				
-				<div ng-class="{'active':highlighted[$index]==$index}" ng-click='highlight($index)' class="keyword-item" ng-repeat="select in selected">
+				<div ng-class="{'active':highlighted[$index]=== $index}" ng-click='highlight($index)' class="keyword-item" ng-repeat="select in selected">
 					<u class="pull-right">Keywords</u>
 					<label>
 						<input class="btn-select" type="checkbox" ng-model="select.ticked" ng-change="categoryChange(select.ticked,$index)">
@@ -87,7 +86,6 @@
 					</label> 
 					{{select.name}}
 				</div>
-				
 			</div>
 			<div class="panel-footer">
 					<div class="input-group">
